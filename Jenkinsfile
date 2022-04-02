@@ -26,7 +26,7 @@ pipeline {
 					sh "mvn test"
 				}
 			}
-			stage(Integration Test){
+			stage('Integration Test'){
 				steps{
 					sh "mvn failsafe:integration-test failsafe:verify"
 				}
