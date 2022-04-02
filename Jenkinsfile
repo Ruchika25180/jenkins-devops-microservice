@@ -46,10 +46,10 @@ pipeline {
 			stage('Push Docker Image'){
 				steps{
 					script{
-						//docker.withRegistry('','credentialname'){
+						docker.withRegistry('','3fc137ed-9c5b-4f2a-94d8-c0e5ffc5ed30'){
 							dockerImage.push();
 							dockerImage.push('latest');
-						//}
+						}
 					}
 				}
 			}
