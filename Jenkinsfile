@@ -39,7 +39,7 @@ pipeline {
 			stage('Build Docker Image'){
 				steps{
 					script{
-						dockerImage = docker.build("/rucrani/jenkins-devops-microservice:${env.BUILD_TAG}")
+						dockerImage = docker.build("rucrani/jenkins-devops-microservice:${env.BUILD_TAG}")
 					}
 				}
 			}
