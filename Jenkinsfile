@@ -47,8 +47,8 @@ pipeline {
 				steps{
 					script{
 						//docker.withRegistry('','credentialname'){
-							dockerImagePush();
-							dockerImagePush('latest');
+							dockerImage.push();
+							dockerImage.push('latest');
 						//}
 					}
 				}
