@@ -22,7 +22,7 @@ pipeline {
 				echo "always run"
 			}
 			success {
-				echo "run when success"
+				echo "run when success1"
 			}
 			failure {
 				echo "run when fail"
