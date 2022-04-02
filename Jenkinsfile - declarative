@@ -16,15 +16,5 @@ pipeline {
 					echo "IntegrationTest2"
 				}
 			}
-		} post {
-			always {
-				echo "always run"
-			}
-			success {
-				echo "run when success"
-			}
-			always {
-				echo "run when fail"
-			}
 		}
 }
