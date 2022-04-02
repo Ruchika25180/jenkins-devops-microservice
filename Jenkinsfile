@@ -1,5 +1,5 @@
 node {
-		echo "Build"
-		echo "Test"
-		echo "IntegrationTest"
+		echo "Build1"
+		echo "Test1"
+		echo "IntegrationTest1"
 }
