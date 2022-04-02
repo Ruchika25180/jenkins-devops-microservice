@@ -31,6 +31,28 @@ pipeline {
 					sh "mvn failsafe:integration-test failsafe:verify"
 				}
 			}
+			stage('Package'){
+				steps{
+					sh "mvn package -DskipTests"
+				}
+			}
+			stage('Build Docker Image'){
+				steps{
+					script{
+						dockerImage = docker.build("/rucrani/jenkins-devops-microservice:${env.BUILD_TAG}")
+					}
+				}
+			}
+			stage('Push Docker Image'){
+				steps{
+					script{
+						//docker.withRegistry('','credentialname'){
+							dockerImagePush();
+							dockerImagePush('latest');
+						//}
+					}
+				}
+			}
 		} 
 		post {
 			always {
